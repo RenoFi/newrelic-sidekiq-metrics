@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    newrelic-sidekiq-metrics (0.1.0)
+    newrelic-sidekiq-metrics (0.1.1)
       newrelic_rpm (~> 6.7.0)
       sidekiq (~> 6.0.3)
 

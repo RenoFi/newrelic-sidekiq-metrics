@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors  = ['Krzysztof Knapik', 'RenoFi Engineering Team']
   spec.email    = ['knapo@knapo.net', 'engineering@renofi.com']
 
-  spec.summary  = 'Implements recording New Relic metrics with Sidekiq stats (like queue or retry size).'
+  spec.summary  = 'Implements recording Sidekiq stats to New Relic metrics.'
   spec.homepage = 'https://github.com/RenoFi/newrelic-sidekiq-metrics'
   spec.license  = 'MIT'
 
