@@ -25,12 +25,12 @@ module NewrelicSidekiqMetrics
     METRIC_MAP.keys
   end
 
-  def self.enabled_metrics
-    @enabled_metrics ||= DEFAULT_ENABLED_METRICS
+  def self.used_metrics
+    @used_metrics ||= DEFAULT_ENABLED_METRICS
   end
 
-  def self.set_metrics(*values)
-    @enabled_metrics = values.flatten & available_metrics
+  def self.use(*values)
+    @used_metrics = values.flatten & available_metrics
   end
 
   def self.add_client_middleware

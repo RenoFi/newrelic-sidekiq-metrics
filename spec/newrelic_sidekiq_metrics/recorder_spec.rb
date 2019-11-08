@@ -1,7 +1,7 @@
 RSpec.describe NewrelicSidekiqMetrics::Recorder do
   describe '#call' do
     before do
-      NewrelicSidekiqMetrics.set_metrics(:enqueued, :workers_size)
+      NewrelicSidekiqMetrics.use(:enqueued, :workers_size)
     end
 
     it do

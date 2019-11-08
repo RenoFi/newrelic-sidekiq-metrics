@@ -4,7 +4,7 @@ module NewrelicSidekiqMetrics
 
     def initialize
       @stats = Sidekiq::Stats.new
-      @metrics = NewrelicSidekiqMetrics.enabled_metrics
+      @metrics = NewrelicSidekiqMetrics.used_metrics
     end
 
     def call

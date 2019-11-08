@@ -15,6 +15,6 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do |example|
-    NewrelicSidekiqMetrics.set_metrics(NewrelicSidekiqMetrics::DEFAULT_ENABLED_METRICS)
+    NewrelicSidekiqMetrics.use(NewrelicSidekiqMetrics::DEFAULT_ENABLED_METRICS)
   end
 end

@@ -5,13 +5,13 @@ RSpec.describe NewrelicSidekiqMetrics do
     end
   end
 
-  describe '.enabled_metrics' do
+  describe '.used_metrics' do
     it do
-      expect(described_class.enabled_metrics).to match_array(%i[enqueued retry_size])
+      expect(described_class.used_metrics).to match_array(%i[enqueued retry_size])
 
-      described_class.set_metrics(:processed, :enqueued, :foo)
+      described_class.use(:processed, :enqueued, :foo)
 
-      expect(described_class.enabled_metrics).to match_array(%i[processed enqueued])
+      expect(described_class.used_metrics).to match_array(%i[processed enqueued])
     end
   end
 
