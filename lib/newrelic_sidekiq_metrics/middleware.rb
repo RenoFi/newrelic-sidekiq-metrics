@@ -1,7 +1,8 @@
 module NewrelicSidekiqMetrics
-  class ServerMiddleware
-    def call(_worker, _msg, _queue, &_block)
+  class Middleware
+    def call(*)
       Recorder.new.call
+      yield
     end
   end
 end

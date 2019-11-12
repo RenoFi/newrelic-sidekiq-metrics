@@ -2,8 +2,7 @@ require 'sidekiq/api'
 require 'newrelic_rpm'
 require 'newrelic_sidekiq_metrics/version'
 require 'newrelic_sidekiq_metrics/recorder'
-require 'newrelic_sidekiq_metrics/client_middleware'
-require 'newrelic_sidekiq_metrics/server_middleware'
+require 'newrelic_sidekiq_metrics/middleware'
 
 module NewrelicSidekiqMetrics
   METRIC_PREFIX = 'Custom/Sidekiq'.freeze
@@ -36,7 +35,7 @@ module NewrelicSidekiqMetrics
   def self.add_client_middleware
     Sidekiq.configure_client do |config|
       config.client_middleware do |chain|
-        chain.add NewrelicSidekiqMetrics::ClientMiddleware
+        chain.add NewrelicSidekiqMetrics::Middleware
       end
     end
   end
@@ -44,10 +43,10 @@ module NewrelicSidekiqMetrics
   def self.add_server_middleware
     Sidekiq.configure_server do |config|
       config.client_middleware do |chain|
-        chain.add NewrelicSidekiqMetrics::ClientMiddleware
+        chain.add NewrelicSidekiqMetrics::Middleware
       end
       config.server_middleware do |chain|
-        chain.add NewrelicSidekiqMetrics::ServerMiddleware
+        chain.add NewrelicSidekiqMetrics::Middleware
       end
     end
   end
