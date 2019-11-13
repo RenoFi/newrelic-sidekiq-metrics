@@ -3,7 +3,7 @@
 
 # newrelic-sidekiq-metrics
 
-Implements recording Sidekiq stats to New Relic metrics.
+Implements recording Sidekiq stats to New Relic metrics by leveraging sidekiq middlewares.
 
 ## Installation
 
