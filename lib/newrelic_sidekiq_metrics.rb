@@ -8,14 +8,14 @@ module NewrelicSidekiqMetrics
   METRIC_PREFIX = 'Custom/Sidekiq'.freeze
 
   METRIC_MAP = {
-    processed:      'ProcessedSize',
-    failed:         'FailedSize',
+    processed: 'ProcessedSize',
+    failed: 'FailedSize',
     scheduled_size: 'ScheduledSize',
-    retry_size:     'RetrySize',
-    dead_size:      'DeadSize',
-    enqueued:       'EnqueuedSize',
+    retry_size: 'RetrySize',
+    dead_size: 'DeadSize',
+    enqueued: 'EnqueuedSize',
     processes_size: 'ProcessesSize',
-    workers_size:   'WorkersSize',
+    workers_size: 'WorkersSize',
   }.freeze
 
   DEFAULT_ENABLED_METRICS = %i[enqueued retry_size].freeze
