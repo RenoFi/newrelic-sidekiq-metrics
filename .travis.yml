@@ -8,3 +8,5 @@ rvm:
 before_install: gem install bundler
 script:
   - bundle exec rake
+services:
+  - redis-server
