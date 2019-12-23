@@ -50,7 +50,7 @@ GEM
     rubocop-performance (1.5.1)
       rubocop (>= 0.71.0)
     ruby-progressbar (1.10.1)
-    sidekiq (6.0.3)
+    sidekiq (6.0.4)
       connection_pool (>= 2.2.2)
       rack (>= 2.0.0)
       rack-protection (>= 2.0.0)
