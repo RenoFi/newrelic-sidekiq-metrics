@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    newrelic-sidekiq-metrics (1.0.1)
-      newrelic_rpm (>= 6.7, < 6.9)
-      sidekiq (~> 6.0.3)
+    newrelic-sidekiq-metrics (1.0.2)
+      newrelic_rpm (~> 6.8)
+      sidekiq (~> 6.0.4)
 
 GEM
   remote: https://rubygems.org/
