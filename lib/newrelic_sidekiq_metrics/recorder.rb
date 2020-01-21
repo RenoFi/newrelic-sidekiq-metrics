@@ -1,14 +1,17 @@
 module NewrelicSidekiqMetrics
   class Recorder
-    attr_reader :stats, :metrics
+    attr_reader :metrics
 
     def initialize
-      @stats = Sidekiq::Stats.new
       @metrics = NewrelicSidekiqMetrics.used_metrics
     end
 
     def call
       metrics.each { |m| record_metric(m) }
+    end
+
+    def stats
+      @stats ||= Sidekiq::Stats.new
     end
 
     private
