@@ -17,7 +17,7 @@ RSpec.configure do |config|
     meta[:aggregate_failures] = true
   end
 
-  config.after(:each) do |example|
+  config.after do |example|
     NewrelicSidekiqMetrics.use(NewrelicSidekiqMetrics::DEFAULT_ENABLED_METRICS)
   end
 
