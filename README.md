@@ -1,7 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/newrelic-sidekiq-metrics.svg)](https://rubygems.org/gems/newrelic-sidekiq-metrics)
 [![Build Status](https://travis-ci.org/RenoFi/newrelic-sidekiq-metrics.svg?branch=master)](https://travis-ci.org/RenoFi/newrelic-sidekiq-metrics)
-[![GitHub issues](https://img.shields.io/github/issues/renofi/newrelic-sidekiq-metrics)](https://github.com/renofi/newrelic-sidekiq-metrics/issues)
-[![GitHub license](https://img.shields.io/github/license/renofi/newrelic-sidekiq-metrics)](https://github.com/RenoFi/newrelic-sidekiq-metrics/blob/master/LICENSE.txt)
 
 # newrelic-sidekiq-metrics
 
