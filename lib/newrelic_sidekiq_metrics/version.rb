@@ -1,3 +1,3 @@
 module NewrelicSidekiqMetrics
-  VERSION = "1.0.4".freeze
+  VERSION = "1.0.6".freeze
 end
