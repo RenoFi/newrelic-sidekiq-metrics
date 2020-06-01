@@ -15,7 +15,7 @@ GEM
     method_source (1.0.0)
     newrelic_rpm (6.10.0.364)
     parallel (1.19.1)
-    parser (2.7.1.2)
+    parser (2.7.1.3)
       ast (~> 2.4.0)
     pry (0.13.1)
       coderay (~> 1.1)
