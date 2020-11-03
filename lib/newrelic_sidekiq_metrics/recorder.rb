@@ -12,6 +12,7 @@ module NewrelicSidekiqMetrics
 
     def stats
       @stats ||= Sidekiq::Stats.new
+
     end
 
     private
@@ -21,7 +22,7 @@ module NewrelicSidekiqMetrics
     end
 
     def metric_full_name(name)
-      File.join(METRIC_PREFIX, METRIC_MAP.fetch(name))
+      File.join(NewrelicSidekiqMetrics.used_prefix, METRIC_MAP.fetch(name))
     end
   end
 end

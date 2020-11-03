@@ -16,6 +16,7 @@ module NewrelicSidekiqMetrics
     enqueued: 'EnqueuedSize',
     processes_size: 'ProcessesSize',
     workers_size: 'WorkersSize',
+    default_queue_latency: 'DefaultQueueLatency',
   }.freeze
 
   DEFAULT_ENABLED_METRICS = %i[enqueued retry_size].freeze
@@ -30,6 +31,14 @@ module NewrelicSidekiqMetrics
 
   def self.use(*values)
     @used_metrics = values.flatten & available_metrics
+  end
+
+  def self.used_prefix
+    @used_prefix ||= METRIC_PREFIX
+  end
+
+  def self.set_prefix(value)
+    @used_prefix = value
   end
 
   def self.add_client_middleware
