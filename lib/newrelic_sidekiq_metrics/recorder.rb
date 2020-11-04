@@ -11,14 +11,19 @@ module NewrelicSidekiqMetrics
     end
 
     def stats
-      @stats ||= Sidekiq::Stats.new
-
+      @stats = JSON.parse(Sidekiq::Stats.new.to_json, {:symbolize_names => true})[:stats].with_indifferent_access
+      queues = Sidekiq::Queue.all
+      queues.each {|queue| @stats["#{queue.name}_latency".to_sym] = queue.latency}
+      @stats[:queue_latency_total] = Sidekiq::Queue.all.inject(0) { |sum, i| sum + Sidekiq::Queue.new(i.name).latency }
+      @stats
     end
 
     private
 
     def record_metric(name)
-      NewRelic::Agent.record_metric(metric_full_name(name), stats.public_send(name))
+      NewRelic::Agent.record_metric(metric_full_name(name), stats[name])
+    rescue error
+      puts error
     end
 
     def metric_full_name(name)

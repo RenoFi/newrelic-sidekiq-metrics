@@ -17,6 +17,14 @@ module NewrelicSidekiqMetrics
     processes_size: 'ProcessesSize',
     workers_size: 'WorkersSize',
     default_queue_latency: 'DefaultQueueLatency',
+    queue_latency_total: 'TotalQueueLatency',
+    critical_fast_latency: 'CriticalFastLatency',
+    critical_long_latency: 'CriticalLongLatency',
+    important_latency: 'ImportantLatency',
+    batches_latency: 'BatchesLatency',
+    searchkick_latency: 'SearchkickLatency',
+    long_latency: 'LongLatency',
+    low: 'LowLatency',
   }.freeze
 
   DEFAULT_ENABLED_METRICS = %i[enqueued retry_size].freeze
