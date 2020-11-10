@@ -21,7 +21,11 @@ RSpec.configure do |config|
     NewrelicSidekiqMetrics.use(NewrelicSidekiqMetrics::DEFAULT_ENABLED_METRICS)
   end
 
-  config.before(:each, type: :integration) do
+  config.before do
+    Sidekiq::Queue.all.each(&:clear)
+  end
+
+  config.before(type: :integration) do
     Sidekiq::Testing.server_middleware do |chain|
       chain.add NewrelicSidekiqMetrics::Middleware
     end
