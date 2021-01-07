@@ -7,7 +7,13 @@ inherit_from:
   - https://raw.githubusercontent.com/RenoFi/rubocop/main/rspec.yml
 
 AllCops:
-  TargetRubyVersion: 2.6
+  NewCops: enable
+
+Gemspec/RequiredRubyVersion:
+  Include:
+    - 2.6
+    - 2.7
+    - 3.0
 
 Naming/FileName:
   Exclude:
