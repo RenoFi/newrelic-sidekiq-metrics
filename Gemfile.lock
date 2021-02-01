@@ -8,7 +8,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    ast (2.4.1)
+    ast (2.4.2)
     coderay (1.1.3)
     connection_pool (2.2.3)
     diff-lcs (1.4.4)
@@ -48,7 +48,7 @@ GEM
       rubocop-ast (>= 1.2.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (1.4.0)
+    rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
     rubocop-rake (0.5.1)
       rubocop
