@@ -4,8 +4,6 @@ require 'sidekiq/cli'
 require 'sidekiq/testing'
 require 'newrelic-sidekiq-metrics'
 
-Sidekiq::Testing.inline!
-
 RSpec.configure do |config|
   config.disable_monkey_patching!
 

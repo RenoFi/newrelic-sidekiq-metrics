@@ -10,14 +10,19 @@ module NewrelicSidekiqMetrics
       metrics.each { |m| record_metric(m) }
     end
 
+    private
+
     def stats
       @stats ||= Sidekiq::Stats.new
     end
 
-    private
+    def get_stat(name)
+      return 0 if NewrelicSidekiqMetrics.inline_sidekiq?
+      stats.public_send(name)
+    end
 
     def record_metric(name)
-      NewRelic::Agent.record_metric(metric_full_name(name), stats.public_send(name))
+      NewRelic::Agent.record_metric(metric_full_name(name), get_stat(name))
     end
 
     def metric_full_name(name)

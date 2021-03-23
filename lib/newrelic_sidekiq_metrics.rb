@@ -50,6 +50,10 @@ module NewrelicSidekiqMetrics
       end
     end
   end
+
+  def self.inline_sidekiq?
+    defined?(Sidekiq::Testing) && Sidekiq::Testing.inline?
+  end
 end
 
 NewrelicSidekiqMetrics.add_client_middleware
