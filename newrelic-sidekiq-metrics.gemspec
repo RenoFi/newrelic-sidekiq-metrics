@@ -24,8 +24,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.6'
 
-  spec.add_dependency 'newrelic_rpm', '~> 6.14'
-  spec.add_dependency 'sidekiq', '~> 6.1'
+  spec.add_dependency 'newrelic_rpm', '~> 7.0'
+  spec.add_dependency 'sidekiq', '~> 6.2'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'pry'
