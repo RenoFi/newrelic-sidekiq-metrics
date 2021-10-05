@@ -21,9 +21,11 @@ module NewrelicSidekiqMetrics
     private
 
     def record_metric(name)
-      NewRelic::Agent.record_metric(metric_full_name(name), stats[name])
-    rescue error
-      puts error
+      begin
+        NewRelic::Agent.record_metric(metric_full_name(name), stats[name])
+      rescue 
+        return 
+      end
     end
 
     def metric_full_name(name)
