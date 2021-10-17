@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/newrelic-sidekiq-metrics.svg)](https://rubygems.org/gems/newrelic-sidekiq-metrics)
-[![Build Status](https://travis-ci.org/RenoFi/newrelic-sidekiq-metrics.svg?branch=master)](https://travis-ci.org/RenoFi/newrelic-sidekiq-metrics)
+[![Build Status](https://github.com/RenoFi/newrelic-sidekiq-metrics/actions/workflows/ci.yml?query=branch%3Amain)](https://github.com/RenoFi/newrelic-sidekiq-metrics/actions/workflows/ci/badge.svg)
 
 # newrelic-sidekiq-metrics
 
