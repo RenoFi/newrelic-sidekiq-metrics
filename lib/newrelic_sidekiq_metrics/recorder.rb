@@ -18,6 +18,7 @@ module NewrelicSidekiqMetrics
 
     def get_stat(name)
       return 0 if NewrelicSidekiqMetrics.inline_sidekiq?
+
       stats.public_send(name)
     end
 
