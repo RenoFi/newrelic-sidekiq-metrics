@@ -8,7 +8,7 @@ RSpec.describe NewrelicSidekiqMetrics::Recorder do
       end
 
       specify do
-        expect(NewrelicSidekiqMetrics.inline_sidekiq?).to eq(true)
+        expect(NewrelicSidekiqMetrics.inline_sidekiq?).to be(true)
 
         NewrelicSidekiqMetrics.use(:enqueued, :workers_size)
 
@@ -24,7 +24,7 @@ RSpec.describe NewrelicSidekiqMetrics::Recorder do
       let(:stats) { instance_double(Sidekiq::Stats, enqueued: 4, workers_size: 2) }
 
       specify do
-        expect(NewrelicSidekiqMetrics.inline_sidekiq?).to eq(false)
+        expect(NewrelicSidekiqMetrics.inline_sidekiq?).to be(false)
 
         NewrelicSidekiqMetrics.use(:enqueued, :workers_size)
 
