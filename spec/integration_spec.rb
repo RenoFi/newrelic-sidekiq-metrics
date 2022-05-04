@@ -18,7 +18,9 @@ RSpec.describe 'Sidekiq Integration', type: :integration do
     it 'executes instance with given arg' do
       expect(HelloService).to receive(:call).with(arg)
 
-      HelloWorker.perform_async(arg)
+      Sidekiq::Testing.inline! do
+        HelloWorker.perform_async(arg)
+      end
     end
   end
 end

@@ -10,6 +10,8 @@ module NewrelicSidekiqMetrics
       metrics.each { |m| record_metric(m) }
     end
 
+    private
+
     def stats
       @stats = JSON.parse(Sidekiq::Stats.new.to_json, {:symbolize_names => true})[:stats].with_indifferent_access
       queues = Sidekiq::Queue.all
@@ -18,7 +20,11 @@ module NewrelicSidekiqMetrics
       @stats
     end
 
-    private
+    def get_stat(name)
+      return 0 if NewrelicSidekiqMetrics.inline_sidekiq?
+
+      stats.public_send(name)
+    end
 
     def record_metric(name)
       begin
