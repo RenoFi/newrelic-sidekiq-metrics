@@ -17,15 +17,13 @@ RSpec.describe NewrelicSidekiqMetrics do
 
   describe '.add_client_middleware' do
     it do
-      expect(Sidekiq.client_middleware.entries.size).to eq(1)
-      expect(Sidekiq.client_middleware.entries[0].klass).to eq(NewrelicSidekiqMetrics::Middleware)
+      expect(Sidekiq.default_configuration.client_middleware.entries.map(&:klass)).to include(NewrelicSidekiqMetrics::Middleware)
     end
   end
 
   describe '.add_server_middleware' do
     it do
-      expect(Sidekiq.server_middleware.entries.size).to eq(1)
-      expect(Sidekiq.server_middleware.entries[0].klass).to eq(NewrelicSidekiqMetrics::Middleware)
+      expect(Sidekiq.default_configuration.server_middleware.entries.map(&:klass)).to include(NewrelicSidekiqMetrics::Middleware)
     end
   end
 end
